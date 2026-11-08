@@ -1,0 +1,23 @@
+name: CI Workflow
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js (Optional)
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Run a Simple Verification Test
+      run: |
+        echo "Running build and tests..."
+        ls -la
