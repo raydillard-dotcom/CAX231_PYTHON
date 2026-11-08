@@ -1,0 +1,4 @@
+echo "GIT01/" >> .gitignore
+echo "GitTest/" >> .gitignore
+echo "version-control-simulation-raymond/" >> .gitignore
+echo "website-GIT_lab01/" >> .gitignore
