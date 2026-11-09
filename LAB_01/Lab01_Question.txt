@@ -1,0 +1,23 @@
+Lab_01 Questions
+
+Q01. What is computer programming, and why is it important in today’s technology-driven world?
+
+Answer01: 
+Computer programming is the process of writing instructions that tell a device exactly how to perform 
+specific tasks and resolve issues. It is the unseen force behind the apps, websites, and software we use every 
+day, making it critical to innovation and automation.
+
+Q02:Briefly describe what Python is and one reason it is a popular programming language for beginners.
+
+Answer02:
+Python is a versatile programming language designed to be easy for humans to read and write. 
+It is popular for beginners because its clean syntax closely resembles regular speech, 
+letting new learners focus on core programming concepts instead of wrestling with difficult code rules.
+
+Q03: Python programs on your own computer?
+
+Answer03: 
+To write and test Python programs, install the Python interpreter, which translates code into 
+instructions for devices to understand. You can use a code editor or an Integrated Development Environment (IDE); 
+examples include VS Code and PyCharm, which act like smart word processors designed particularly for writing 
+and testing code.
