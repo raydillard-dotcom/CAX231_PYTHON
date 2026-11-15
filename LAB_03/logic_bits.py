@@ -45,7 +45,7 @@ def logic_bits_demo():
     # Left Shift (<<)
     left_shift = num1 << 1
     print(f"Left Shift  (5 << 1):{left_shift} (Binary: {bin(left_shift)})")
-    
+    1
     # Right Shift (>>)
     right_shift = num1 >> 1
     print(f"Right Shift (5 >> 1):{right_shift} (Binary: {bin(right_shift)})")
