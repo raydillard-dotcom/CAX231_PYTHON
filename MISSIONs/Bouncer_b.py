@@ -19,4 +19,4 @@ def check_age():
     message = "PLEASE DRINK RESPONSIBLY"
     print(message)
 
-check_age()
+check_age()14
