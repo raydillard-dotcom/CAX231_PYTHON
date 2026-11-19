@@ -1,5 +1,4 @@
 
-
 def main():
     #Define the raw list of exam scores
     raw_scores = [85, -10, 59, 60, 92, -3, 74, 45, 100]
@@ -11,10 +10,10 @@ def main():
     for score in raw_scores:
         #Check whether the score is 60 or above
         if score >= 60:
-            # Step 5: Append qualifying scores to passing_scores
+            #Append qualifying scores to passing_scores
             passing_scores.append(score)
 
-    # Display the filtered results
+    #Display the filtered results
     print("Passing scores:", passing_scores)
 
 if __name__ == "__main__":
