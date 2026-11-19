@@ -1,12 +1,10 @@
 
 # variables
-
 guess = ""
 wrong_attempts = 0
 max_attempts = 3
 
-# The loop keeps running WHILE the user’s guess is wrong AND has three attempts
-
+#The loop keeps running WHILE the user’s guess is wrong and they have three attempts
 while guess != "python123" and wrong_attempts < max_attempts:
     guess = input("Enter password: ")
     
@@ -15,8 +13,7 @@ while guess != "python123" and wrong_attempts < max_attempts:
     else:
         wrong_attempts += 1
         
-        # Check if they just hit the limit
-                                                
+        #Check if they just hit the limit                                        
         if wrong_attempts >= max_attempts:
             print("Account locked. Try again later.")
         else:
