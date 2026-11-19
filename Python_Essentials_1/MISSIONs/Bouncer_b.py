@@ -1,11 +1,12 @@
 
 def check_age():
     user_input = input("Please enter your age: ")
-    
+
+    #Determine if you are old enough to enter
     try:
-        age = int(user_input)  # <-- This line MUST be indented!
+        age = int(user_input)  
     except ValueError:
-        print("❌ That's not a valid number!")
+        print("That's not a valid number!")
         return
 
     if age < 18:
