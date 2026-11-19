@@ -1,7 +1,6 @@
 
 from random import randrange
-import smtplib
-from email.message import EmailMessage
+
 
 def display_board(board):
     """Accepts the board's current status and prints it out to the console."""
@@ -12,6 +11,7 @@ def display_board(board):
         print("|       |       |       |")
         print("+-------+-------+-------+")
 
+
 def enter_move(board):
     """Asks the user for their move, checks input validity, and updates the board."""
     while True:
@@ -20,11 +20,11 @@ def enter_move(board):
             if move < 1 or move > 9:
                 print("Bad move: enter a number from 1 to 9.")
                 continue
-            
+
             # Map 1-9 to 3x3 grid coordinates (row, col)
             row = (move - 1) // 3
             col = (move - 1) % 3
-            
+
             # Check if the field is free (still an integer)
             if isinstance(board[row][col], int):
                 board[row][col] = 'O'
@@ -33,6 +33,7 @@ def enter_move(board):
                 print("Field already occupied, choose another one.")
         except ValueError:
             print("Invalid input: please enter an integer between 1 and 9.")
+
 
 def make_list_of_free_fields(board):
     """Browses the board and builds a list of tuples representing free squares (row, col)."""
@@ -43,6 +44,7 @@ def make_list_of_free_fields(board):
                 free_fields.append((row, col))
     return free_fields
 
+
 def victory_for(board, sign):
     """Analyzes the board status to check if the given sign ('X' or 'O') has won."""
     # Check rows and columns
@@ -51,14 +53,15 @@ def victory_for(board, sign):
             return True
         if board[0][r] == sign and board[1][r] == sign and board[2][r] == sign:
             return True
-            
+
     # Check diagonals
     if board[0][0] == sign and board[1][1] == sign and board[2][2] == sign:
         return True
     if board[0][2] == sign and board[1][1] == sign and board[2][0] == sign:
         return True
-        
+
     return False
+
 
 def draw_move(board):
     """Selects a random free field for the computer's move and updates the board."""
@@ -68,44 +71,21 @@ def draw_move(board):
         row, col = free_fields[index]
         board[row][col] = 'X'
 
-def invite_friend_via_email():
-    """Optional feature to send an email invitation to a friend to play Tic-Tac-Toe."""
-    choice = input("\nWould you like to invite a friend to play via email? (y/n): ").strip().lower()
-    if choice == 'y':
-        recipient = input("Enter your friend's email address: ")
-        sender = input("Enter your email address: ")
-        password = input("Enter your email app password: ")
-        
-        msg = EmailMessage()
-        msg.set_subject("Let's play Tic-Tac-Toe!")
-        msg.set_content("Hey! I just played a text-based game of Tic-Tac-Toe in Python. Come join or challenge me sometime!")
-        msg['Subject'] = msg['subject']
-        msg['From'] = sender
-        msg['To'] = recipient
-        
-        try:
-            # Example using standard SMTP configuration (e.g., Gmail port 465)
-            with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-                smtp.login(sender, password)
-                smtp.send_message(msg)
-            print("Invitation email sent successfully!")
-        except Exception as e:
-            print(f"Failed to send email: {e}")
 
 def main():
     # Initialize the board with numbers 1 through 9
     board = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-    
+
     # Computer makes the first move in the center
     board[1][1] = 'X'
     human_turn = True
-    
+
     print("Welcome to Tic-Tac-Toe!")
     print("You are 'O' and the computer is 'X'.")
-    
+
     while True:
         display_board(board)
-        
+
         if human_turn:
             enter_move(board)
             if victory_for(board, 'O'):
@@ -121,13 +101,12 @@ def main():
                 print("Computer won!")
                 break
             human_turn = True
-            
+
         if not make_list_of_free_fields(board):
             display_board(board)
             print("It's a tie!")
             break
-            
-    invite_friend_via_email()
+
 
 if __name__ == "__main__":
     main()
