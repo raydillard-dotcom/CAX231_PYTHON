@@ -24,7 +24,6 @@ def add_contact(contacts):
     contacts[name] = phone
     print(f"Success: '{name}' has been added to your contacts.")
 
-
 def view_contacts(contacts):
     """Display all stored contacts in alphabetical order."""
     print("\n All Contacts")
@@ -36,7 +35,6 @@ def view_contacts(contacts):
     print("-" * 35)
     for name in sorted(contacts.keys()):
         print(f"{name:<20} | {contacts[name]}")
-
 
 def search_contact(contacts):
     """Search for contacts by name or partial query."""
@@ -62,7 +60,6 @@ def search_contact(contacts):
     if not found:
         print(f"No contacts found matching '{query}'.")
 
-
 def delete_contact(contacts):
     """Delete a contact by name if it exists."""
     print("\n--- Delete Contact ---")
@@ -84,38 +81,34 @@ def delete_contact(contacts):
     else:
         print(f"Error: '{name}' was not found in the contact book.")
 
-
 def main():
-    print("=== Contact Book Directory ===\n")
+    print("Contact Book Directory\n")
     
-    #Initial dictionary containing contact names (keys) and phone numbers (values)
+    #Initial dictionary containing contact names and phone numbers
     phone_book = {
         "Alice": "555-1234",
         "Bob": "555-5678",
         "Charlie": "555-9876"
     }
     
-    print("Initial Contact Directory:")
-    print(phone_book)  # Outputs: {'Alice': '555-1234', 'Bob': '555-5678', ...}
-    
     #Look up and print Bob's phone number using his name as the key
-    print("\n--- Looking Up a Contact ---")
+    print("\n Looking Up a Contact ")
     bobs_number = phone_book.get("Bob", "Not Found")
     print(f"Bob's phone number: {bobs_number}")
     
     #Update Alice's phone number to "555-0000"
-    print("\n--- 2. Updating an Existing Contact ---")
+    print("\n Updating an Existing Contact ")
     print(f"Alice's previous number: {phone_book['Alice']}")
     phone_book["Alice"] = "555-0000"
     print(f"Alice's updated number: {phone_book['Alice']}")
     
     #Add a new person "David" with the phone number "555-4321"
-    print("\n--- 3. Adding a New Contact ---")
+    print("\n Adding a New Contact")
     phone_book["David"] = "555-4321"
     print("Successfully added David to the directory.")
     
     #Final display of the pre-configured dictionary using a loop
-    print("\n--- Initial Setup Roster ---")
+    print("\n Initial Setup Roster ")
     for name, number in phone_book.items():
         print(f"{name}: {number}")
 
@@ -132,7 +125,7 @@ def main():
         print("5. Exit")
         print("==============================")
 
-        # Exception handling for menu choice conversion
+        #Exception handling for menu choice conversion
         try:
             choice = int(input("Enter your choice (1-5): "))
         except ValueError:
