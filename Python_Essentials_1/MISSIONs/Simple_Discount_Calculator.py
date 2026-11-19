@@ -17,7 +17,6 @@ class discount_rate:
             raise ValueError("Original price cannot be negative.")
         return original_price * (1 - self.rate)
 
-
 def calculate_price(original_price, discount_rate=0.20):
     """
     Calculate the final price after applying a discount.
@@ -26,8 +25,6 @@ def calculate_price(original_price, discount_rate=0.20):
     """
     return discount_rate(original_price) if hasattr(discount_rate, "calculate") else \
         discount_rate(original_price, discount_rate)
-
-
 def main():
     print("$$$ Discount Calculator $$$\n")
 
@@ -47,7 +44,6 @@ def main():
     print(f"Original Price : ${custom_price:.2f}")
     print("Discount Rate  : 35% (Custom)")
     print(f"Final Price    : ${final_price_custom:.2f}")
-
 
 if __name__ == "__main__":
     main()
